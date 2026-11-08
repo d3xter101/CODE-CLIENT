@@ -36,6 +36,8 @@ export type News = {
     id?: string,
     title: string,
     description: string,
+    // added by getNews: description is reduced to plain text, this keeps the formatting after filtering it
+    descriptionHtml?: string,
     image: Image,
     type: string,
     publishedAt: Date
