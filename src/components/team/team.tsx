@@ -8,29 +8,29 @@ import { devs } from "@/seed/office-members"
 export default async function TeamTreePage() {
     const officeMembers: OfficeMember[] = await fetchMembers();
 
-    // Helpers
-    const findMember = (position: string) =>
-        officeMembers.find((m) => m.position.toLowerCase() === position.toLowerCase())
+    // The position is free text in the admin panel: these lists only set the order, and an unknown title still shows up
+    const leadershipOrder = ["president", "vice president", "secretary general", "human resources", "treasury"]
+    const officerOrder = [
+        "chief development officer", "chief logistics officer", "chef logistique", "chef organisation",
+        "chief media officer", "chief communication officer", "vice sg", "vice hr", "vice rh", "vice treasury",
+    ]
 
-    const findMembers = (position: string) =>
-        officeMembers.filter((m) => m.position.toLowerCase() === position.toLowerCase())
+    const positionOf = (m: OfficeMember) => m.position.trim().toLowerCase()
+    const inOrder = (order: string[]) => (a: OfficeMember, b: OfficeMember) => {
+        const rank = (m: OfficeMember) => {
+            const index = order.indexOf(positionOf(m))
+            return index === -1 ? order.length : index
+        }
+        return rank(a) - rank(b)
+    }
 
-    // Roles
-    const president = findMember("President")
-    const vp = findMember("Vice President")
-    const rh = findMember("Human Resources")
-    const consultants = findMembers("Consultant")
-    const tresor = findMember("Treasury")
-    const sg = findMember("Secretary General")
-    const devChef = findMember("Chief Development Officer")
-    const media = findMember("Chief Media Officer")
-    const communication = findMember("Chief Communication Officer")
-    const logistic = findMember("Chief Logistics Officer")
-    const vRh = findMember("Vice HR")
-    const vSg = findMember("Vice SG")
-    const vsT = findMember("Vice Treasury")
+    const leadership = officeMembers.filter((m) => leadershipOrder.includes(positionOf(m))).sort(inOrder(leadershipOrder))
+    const consultants = officeMembers.filter((m) => positionOf(m).startsWith("consultant"))
+    const officers = officeMembers
+        .filter((m) => !leadership.includes(m) && !consultants.includes(m))
+        .sort(inOrder(officerOrder))
 
-    if (!president) {
+    if (officeMembers.length === 0) {
         return (
             <div className="container mx-auto my-10 min-h-screen px-4 text-center">
                 <PageHero
@@ -57,32 +57,18 @@ export default async function TeamTreePage() {
                 <div className="flex flex-col items-center gap-8">
 
                     <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-center gap-5">
-                        <OfficeMemberCard member={president} />
-                        <OfficeMemberCard member={vp} />
-                        <OfficeMemberCard member={sg} />
-                        <OfficeMemberCard member={rh} />
-                        <OfficeMemberCard member={tresor} />
+                        {leadership.map((m) => (
+                            <OfficeMemberCard key={m.id} member={m} />
+                        ))}
                     </div>
 
                     <div className="w-1 h-12 bg-gradient-to-b from-primary to-secondary rounded-full" />
 
                     <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-center gap-5">
-                        <OfficeMemberCard member={devChef} />
-                        <OfficeMemberCard member={logistic} />
-                        <OfficeMemberCard member={media} />
-                        <OfficeMemberCard member={communication} />
-                        <OfficeMemberCard member={vSg} />
-                        <OfficeMemberCard member={vRh} />
-                        <OfficeMemberCard member={vsT} />
+                        {officers.map((m) => (
+                            <OfficeMemberCard key={m.id} member={m} />
+                        ))}
                     </div>
-
-                    {/* <div className="w-1 h-12 bg-gradient-to-b from-primary to-secondary rounded-full" />
-
-                    <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-center gap-5">
-                        <OfficeMemberCard member={vSg} />
-                        <OfficeMemberCard member={vRh} />
-                        <OfficeMemberCard member={vsT} />
-                    </div> */}
 
                     <div className="w-1 h-12 bg-gradient-to-b from-primary to-secondary rounded-full" />
 
