@@ -86,7 +86,7 @@ export default async function RootLayout({
                 {
                   "@type": ["Organization", "EducationalOrganization"],
                   "@id": `${SITE_URL}/#organization`,
-                  alternateName: ["CODE Club", "Code Club of Development Enthusiasts"],
+                  alternateName: ["CODE Club", "Club CODE", "CODE FSTS", "Club CODE FSTS", "Code Club of Development Enthusiasts"],
                   areaServed: "Settat, Morocco",
                   address: {
                     "@type": "PostalAddress",
@@ -115,6 +115,7 @@ export default async function RootLayout({
                   "@id": `${SITE_URL}/#website`,
                   url: SITE_URL,
                   name: SITE_NAME,
+                  alternateName: ["CODE Club FSTS", "Club CODE FSTS", "CODE FSTS"],
                   inLanguage: "en",
                   publisher: { "@id": `${SITE_URL}/#organization` },
                 },

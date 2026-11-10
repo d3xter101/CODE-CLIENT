@@ -9,8 +9,8 @@ export const SITE_DESCRIPTION =
   "Code Club is a student-led initiative at FST Settat, created by engineering students passionate about turning theory into practice. Our mission is to share knowledge, build skills, and collaborate through projects, workshops, and events.";
 /** Short (<160 chars) description for <meta> and social cards; the long one feeds JSON-LD. */
 export const SITE_META_DESCRIPTION =
-  "Code Club is a student-led programming club at FST Settat. Join our workshops, hackathons and projects to turn theory into practice.";
-export const HOME_TITLE = "Code Club FST Settat | Student Programming Club in Morocco";
+  "CODE is the student programming club of FSTS (FST Settat). Join our hackathons, workshops and FSTS events, and turn theory into practice.";
+export const HOME_TITLE = "CODE Club FSTS | Programming Club of FST Settat";
 export const DEFAULT_OG_IMAGE = "/og-image.webp";
 export const SOCIAL_PROFILES = [
   "https://www.instagram.com/code.club12/",

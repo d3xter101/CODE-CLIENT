@@ -2,6 +2,16 @@
 /** Shown in the FAQ section and sent to search engines and AI assistants as FAQPage data. */
 export const faqs = [
   {
+    question: "What is the CODE club at FSTS?",
+    answer:
+      "CODE is the student programming club of FSTS, the Faculty of Sciences and Techniques of Settat (FST Settat) at Hassan First University. Students run it to share knowledge and build real projects together.",
+  },
+  {
+    question: "Where can I find FSTS events organized by the club?",
+    answer:
+      "All of our FSTS events, including hackathons, programming competitions, workshops and orientation days, are listed on the Events page of clubcode.online, where you can also register.",
+  },
+  {
     question: "How can I join the CODE club?",
     answer:
       "You are very welcome to register directly on our website. Registration opens at the beginning of the academic year, and whenever it is closed, the registration page will let you know so you can come back at the next opening.",

@@ -79,7 +79,7 @@ export default function About() {
                   variants={item}
                   className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-transparent"
                 >
-                  A university club for coding & collaboration
+                  The FSTS club for coding & collaboration
                 </motion.h2>
                 <motion.p
                   variants={item}

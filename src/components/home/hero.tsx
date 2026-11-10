@@ -158,12 +158,12 @@ export default function Hero() {
             variants={item}
             className="text-muted-foreground mb-8 text-lg leading-relaxed md:text-xl max-w-3xl"
           >
-            Join our university{" "}
-            <strong className="text-primary  ">code club</strong> for
+            Join the{" "}
+            <strong className="text-primary  ">CODE club of FSTS</strong> for
             <strong className="text-primary"> hackathons</strong>,
             <strong className="text-primary"> competitions</strong>, and
             <strong className="text-primary"> training</strong>. Stay updated on
-            <strong className="text-primary"> events</strong>, meet the{" "}
+            <strong className="text-primary"> FSTS events</strong>, meet the{" "}
             <strong className="text-primary"> team</strong>, and become a{" "}
             <FlipWords
               className="inline font-semibold text-primary"

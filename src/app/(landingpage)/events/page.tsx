@@ -4,9 +4,9 @@ import EventsSection from "@/components/events/eventsSection";
 import { getEvents, getNumPage } from "@/actions/events";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Tech Events, Hackathons & Workshops - Code Club FST Settat",
+  title: "FSTS Events: Hackathons & Workshops - Code Club FST Settat",
   description:
-    "Upcoming hackathons, competitions, workshops and orientation events organized by the Code Club at FST Settat. Browse and register.",
+    "FSTS events by the CODE club: hackathons, competitions, workshops and orientation days at FST Settat. Browse upcoming events and register.",
   path: "/events",
   keywords: ["Events", "Workshops", "Hackathons"],
 });

@@ -50,7 +50,7 @@ export default function EventsSection({
     <div className="container mx-auto p-4">
       <PageHero
         badge="Workshops &amp; Competitions"
-        title={<>Tech <span className="text-primary">Events</span> &amp; Workshops</>}
+        title={<>FSTS <span className="text-primary">Events</span> &amp; Workshops</>}
         description={typedText}
         descriptionClassName="min-h-7"
       />
